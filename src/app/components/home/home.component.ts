@@ -1,5 +1,5 @@
 import { error, log } from 'console';
-import { ApiService } from './../service/api.service';
+import { ApiService } from '../../service/api.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

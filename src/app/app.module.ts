@@ -4,10 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
-import { HomeComponent } from './home/home.component';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { HomeComponent } from './components/home/home.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HeaderComponent } from './components/header/header.component';
-import { MainMenuComponent } from './components/main-menu/main-menu.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
+import { ImageDetailsComponent } from './components/image-details/image-details.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { MainMenuComponent } from './components/main-menu/main-menu.component';
     HomeComponent,
     NotFoundComponent,
     HeaderComponent,
-    MainMenuComponent
+    FooterComponent,
+    SearchResultsComponent,
+    ImageDetailsComponent,
   ],
   imports: [
     BrowserModule,
