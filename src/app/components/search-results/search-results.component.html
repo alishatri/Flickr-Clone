@@ -1,63 +1,27 @@
-<article>
-  <main>
-    <header>
-      <h4>Everyone’s photos</h4>
-      <button>View all</button>
-    </header>
-    <section>
-      <img
-        src="https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQWz3mfrE0TpNrF-Y6aeZ6cPkBAvkAVIuE-VOB4ZXZw2z2My5J6PUnSv7VN6tHwTkXT"
-        alt=""
-      />
-      <img
-        src="https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQWz3mfrE0TpNrF-Y6aeZ6cPkBAvkAVIuE-VOB4ZXZw2z2My5J6PUnSv7VN6tHwTkXT"
-        alt=""
-      /><img
-      src="https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQWz3mfrE0TpNrF-Y6aeZ6cPkBAvkAVIuE-VOB4ZXZw2z2My5J6PUnSv7VN6tHwTkXT"
-      alt=""
-    /><img
-    src="https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQWz3mfrE0TpNrF-Y6aeZ6cPkBAvkAVIuE-VOB4ZXZw2z2My5J6PUnSv7VN6tHwTkXT"
-    alt=""
-  /><img
-  src="https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQWz3mfrE0TpNrF-Y6aeZ6cPkBAvkAVIuE-VOB4ZXZw2z2My5J6PUnSv7VN6tHwTkXT"
-  alt=""
-/><img
-src="https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQWz3mfrE0TpNrF-Y6aeZ6cPkBAvkAVIuE-VOB4ZXZw2z2My5J6PUnSv7VN6tHwTkXT"
-alt=""
-/><img
-src="https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQWz3mfrE0TpNrF-Y6aeZ6cPkBAvkAVIuE-VOB4ZXZw2z2My5J6PUnSv7VN6tHwTkXT"
-alt=""
-/><img
-src="https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQWz3mfrE0TpNrF-Y6aeZ6cPkBAvkAVIuE-VOB4ZXZw2z2My5J6PUnSv7VN6tHwTkXT"
-alt=""
-/><img
-src="https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQWz3mfrE0TpNrF-Y6aeZ6cPkBAvkAVIuE-VOB4ZXZw2z2My5J6PUnSv7VN6tHwTkXT"
-alt=""
-/><img
-src="https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQWz3mfrE0TpNrF-Y6aeZ6cPkBAvkAVIuE-VOB4ZXZw2z2My5J6PUnSv7VN6tHwTkXT"
-alt=""
-/><img
-        src="https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQWz3mfrE0TpNrF-Y6aeZ6cPkBAvkAVIuE-VOB4ZXZw2z2My5J6PUnSv7VN6tHwTkXT"
-        alt=""
-      /><img
-      src="https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQWz3mfrE0TpNrF-Y6aeZ6cPkBAvkAVIuE-VOB4ZXZw2z2My5J6PUnSv7VN6tHwTkXT"
-      alt=""
-    /><img
-    src="https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQWz3mfrE0TpNrF-Y6aeZ6cPkBAvkAVIuE-VOB4ZXZw2z2My5J6PUnSv7VN6tHwTkXT"
-    alt=""
-  /><img
-  src="https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQWz3mfrE0TpNrF-Y6aeZ6cPkBAvkAVIuE-VOB4ZXZw2z2My5J6PUnSv7VN6tHwTkXT"
-  alt=""
-/><img
-        src="https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQWz3mfrE0TpNrF-Y6aeZ6cPkBAvkAVIuE-VOB4ZXZw2z2My5J6PUnSv7VN6tHwTkXT"
-        alt=""
-      /><img
-      src="https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQWz3mfrE0TpNrF-Y6aeZ6cPkBAvkAVIuE-VOB4ZXZw2z2My5J6PUnSv7VN6tHwTkXT"
-      alt=""
-    /><img
-    src="https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQWz3mfrE0TpNrF-Y6aeZ6cPkBAvkAVIuE-VOB4ZXZw2z2My5J6PUnSv7VN6tHwTkXT"
-    alt=""
-  />
-    </section>
-  </main>
-</article>
+<div class="container">
+  <h1 class="text-center">Flickr</h1>
+  <div class="form-group">
+    <input
+      type="search"
+      class="form-control"
+      (keyup)="search($event)"
+      placeholder="Search images"
+    />
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-4 p-3" *ngFor="let image of images">
+      <div class="card">
+        <a href="{{ image.url }}_b.jpg">
+          <img src="{{ image.url }}_m.jpg" title="{{ image.title }}" />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    class="search-results"
+    infiniteScroll
+    
+    (scrolled)="onScroll()">
+  </div>
+</div>

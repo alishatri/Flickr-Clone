@@ -1,4 +1,3 @@
-import { error, log } from 'console';
 import { ApiService } from '../../service/api.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -12,14 +11,5 @@ export class HomeComponent implements OnInit {
 
   constructor(private apiService: ApiService) {}
 
-  ngOnInit(): void {
-    this.apiService.get().subscribe(
-      (data) => {
-        this.FlickerData = data;
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  }
+  ngOnInit(): void {}
 }

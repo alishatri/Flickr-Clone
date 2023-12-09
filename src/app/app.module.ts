@@ -11,6 +11,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { ImageDetailsComponent } from './components/image-details/image-details.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,9 +26,9 @@ import { ImageDetailsComponent } from './components/image-details/image-details.
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
