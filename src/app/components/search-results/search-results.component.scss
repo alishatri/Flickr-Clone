@@ -7,18 +7,16 @@ img {
 .card {
   position: relative;
 }
+.container {
+  flex: 1;
 
+}
 .content {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.7
-  );
+  background-color: rgba(0, 0, 0, 0.7);
   color: #fff;
   padding: 10px;
   margin: 0;
@@ -30,10 +28,11 @@ img {
   opacity: 1;
 }
 
-section{
+section {
   height: 100vh;
   display: flex;
-  // background-color: #232534;
   flex-direction: column;
   justify-content: space-between;
 }
+
+

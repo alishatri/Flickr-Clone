@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { FlickrPhoto, FlickrOutput } from '../interfaces/flicker';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -39,9 +38,8 @@ export class ApiService {
     );
   }
 
-  imageDetails(id: string): Observable<any> {
-    const apiUrl = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${environment.apiKey.key}&text=${id}&format=json&nojsoncallback=1&per_page=12&page=${this.pageNumber}`;
-    return this.http.get(apiUrl);
+  imageDetails(id:any) {
+    const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search/&api_key=${environment.apiKey.key}&text=${this.prevKeyword}&format=json&nojsoncallback=1&per_page=12&page=${this.pageNumber}`;
+    return this.http.get(url)
   }
 }
-

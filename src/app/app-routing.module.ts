@@ -20,10 +20,6 @@ const routes: Routes = [
     component: SearchResultsComponent,
   },
   {
-    path: 'details/:id',
-    component: ImageDetailsComponent,
-  },
-  {
     path: '**',
     component: NotFoundComponent,
   },

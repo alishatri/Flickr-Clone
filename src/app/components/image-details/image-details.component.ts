@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { FlickrPhoto } from 'src/app/interfaces/flicker';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { map } from 'rxjs';
+import { FlickrOutput, FlickrPhoto } from 'src/app/interfaces/flicker';
 import { ApiService } from 'src/app/service/api.service';
 
 @Component({
@@ -9,10 +10,22 @@ import { ApiService } from 'src/app/service/api.service';
   styleUrls: ['./image-details.component.scss'],
 })
 export class ImageDetailsComponent implements OnInit {
-  imageDetails: any;
   constructor(
     private activateRoute: ActivatedRoute,
     private apiService: ApiService
   ) {}
-  ngOnInit(): void {}
+
+  imageDetails: any;
+
+  ngOnInit(): void {
+    this.activateRoute.params.subscribe((params: any) => {
+      this.apiService.imageDetails(params.id).subscribe((data) => {
+        this.imageDetails = data;
+
+        
+        console.log('Image details',this.imageDetails);
+        
+      });
+    });
+  }
 }

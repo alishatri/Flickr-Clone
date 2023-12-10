@@ -49,10 +49,12 @@ export class SearchResultsComponent implements OnInit {
     }
   }
 
-  openDialog() {
+  openDialog(id:any) {
+    console.log('ID',id);
+    
     this.dialog.open(ImageDetailsComponent, {
-      data:{
-        images:this.images
+      data: {
+        id
       }
     });
   }

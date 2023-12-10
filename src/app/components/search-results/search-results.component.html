@@ -1,7 +1,7 @@
 <section>
   <app-header></app-header>
+  <br>
   <div class="container">
-    <br />
     <div class="form-group">
       <input
         type="search"
@@ -12,7 +12,7 @@
     </div>
     <div class="row">
       <div class="col-sm-12 col-md-6 col-lg-4 p-3" *ngFor="let image of images">
-        <div class="card" (click)="openDialog()">
+        <div class="card" (click)="openDialog(image.id)">
           <img src="{{ image.url }}_m.jpg" title="{{ image.title }}" />
           <p class="content">{{ image.title }}</p>
         </div>

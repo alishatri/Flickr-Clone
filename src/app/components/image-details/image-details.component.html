@@ -1,10 +1,8 @@
 <mat-dialog-content class="mat-typography">
-  <img
-  width="100%"
-    src="https://st.depositphotos.com/28379836/61073/i/450/depositphotos_610736028-stock-photo-fantasy-background-magic-forest-road.jpg"
-    alt=""
-    srcset=""
-  />
+  Test
+  <section *ngFor="let image of imageDetails.url">
+    <img [src]="image" alt="Image" />
+  </section>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancel</button>
