@@ -1,20 +1,27 @@
-main{
-    height: 100vh;
-    background-image: url("https://st.depositphotos.com/28379836/61073/i/450/depositphotos_610736028-stock-photo-fantasy-background-magic-forest-road.jpg");
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  header {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
-    color: white;
-  }
-  
-  h1 {
-    font-size: 44px;
-  }
-  
+section {
+  height: 100vh;
+  overflow: hidden;
+  background-image: url("https://st.depositphotos.com/28379836/61073/i/450/depositphotos_610736028-stock-photo-fantasy-background-magic-forest-road.jpg");
+  background-size: cover;
+  position: relative;
+}
+header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  color: white;
+}
+h1 {
+  font-size: 44px;
+}
+button{
+    padding: 1rem;
+    background-color: white;
+    outline: none;
+    border-radius: 20px;
+    border: none;
+}

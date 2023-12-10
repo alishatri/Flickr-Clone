@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { ImageDetailsComponent } from './components/image-details/image-details.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
@@ -17,16 +18,17 @@ import { ImageDetailsComponent } from './components/image-details/image-details.
     AppComponent,
     HomeComponent,
     NotFoundComponent,
-    HeaderComponent,
     FooterComponent,
     SearchResultsComponent,
     ImageDetailsComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     HttpClientJsonpModule,
+    InfiniteScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,10 +1,13 @@
-<header>
-  <nav routerLink="/home">
-    <img src="../../../assets/flickr-1.svg" alt="Logo" />
-    <h1>flickr</h1>
-  </nav>
-  <form>
-    <span class="material-symbols-outlined"> search </span>
-    <input type="text" placeholder="Photos, people, or groups" />
-  </form>
-</header>
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <div class="container">
+    <img class="logo" src="../../../assets/pngegg.png" routerLink="/home" />
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/search">Services</a>
+      </li>
+    </ul>
+  </div>
+</nav>

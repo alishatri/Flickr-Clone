@@ -14,7 +14,7 @@ export class SearchResultsComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  search(event: any) {
+  onSearch(event: any) {
     this.key = event.target.value.toLowerCase();
     if (this.key && this.key.length > 0) {
       this.apiService.search_keyword(this.key).subscribe(
