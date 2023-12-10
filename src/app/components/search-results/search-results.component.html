@@ -12,7 +12,7 @@
     </div>
     <div class="row">
       <div class="col-sm-12 col-md-6 col-lg-4 p-3" *ngFor="let image of images">
-        <div class="card">
+        <div class="card" (click)="openDialog()">
           <img src="{{ image.url }}_m.jpg" title="{{ image.title }}" />
           <p class="content">{{ image.title }}</p>
         </div>

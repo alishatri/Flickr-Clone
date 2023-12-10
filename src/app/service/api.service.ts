@@ -3,17 +3,18 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { FlickrPhoto, FlickrOutput } from '../interfaces/flicker';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
   prevKeyword: string | undefined;
-  pageNumber!:number;
+  pageNumber!: number;
 
   constructor(private http: HttpClient) {}
 
-  search_keyword(keyword: string) {
+  search(keyword: string) {
     if (this.prevKeyword === keyword) {
       this.pageNumber++;
     } else {
@@ -37,4 +38,10 @@ export class ApiService {
       })
     );
   }
+
+  imageDetails(id: string): Observable<any> {
+    const apiUrl = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${environment.apiKey.key}&text=${id}&format=json&nojsoncallback=1&per_page=12&page=${this.pageNumber}`;
+    return this.http.get(apiUrl);
+  }
 }
+

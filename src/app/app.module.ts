@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,6 +12,8 @@ import { SearchResultsComponent } from './components/search-results/search-resul
 import { ImageDetailsComponent } from './components/image-details/image-details.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { HeaderComponent } from './components/header/header.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 
 @NgModule({
@@ -28,7 +31,9 @@ import { HeaderComponent } from './components/header/header.component';
     AppRoutingModule,
     HttpClientModule,
     HttpClientJsonpModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    MatDialogModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
