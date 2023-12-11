@@ -1,9 +1,10 @@
-<mat-dialog-content class="mat-typography">
-  Test
-  <section *ngFor="let image of imageDetails.url">
-    <img [src]="image" alt="Image" />
-  </section>
-</mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
+  <button class="material-symbols-outlined" mat-button mat-dialog-close>
+    close
+  </button>
 </mat-dialog-actions>
+<mat-dialog-content class="mat-typography">
+  <div class="image-container align-items-center">
+    <img src="{{ imageDetails?.url }}_m" alt="{{ imageDetails?.title }}" />
+  </div>
+</mat-dialog-content>

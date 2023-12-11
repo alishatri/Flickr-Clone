@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../service/api.service';
-import { Router } from '@angular/router';
 import { ImageDetailsComponent } from '../image-details/image-details.component';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -13,11 +12,7 @@ export class SearchResultsComponent implements OnInit {
   images: any;
   key: string | undefined;
 
-  constructor(
-    private apiService: ApiService,
-    private router: Router,
-    private dialog: MatDialog
-  ) {}
+  constructor(private apiService: ApiService, private dialog: MatDialog) {}
 
   ngOnInit(): void {}
 
@@ -35,7 +30,6 @@ export class SearchResultsComponent implements OnInit {
       );
     }
   }
-
   onScroll() {
     if (this.key && this.key.length > 0) {
       this.apiService.search(this.key).subscribe(
@@ -49,13 +43,14 @@ export class SearchResultsComponent implements OnInit {
     }
   }
 
-  openDialog(id:any) {
-    console.log('ID',id);
-    
+  openDialog(id: any, url: any) {
+    console.log('ID', id);
     this.dialog.open(ImageDetailsComponent, {
       data: {
-        id
-      }
+        id,
+        url,
+      },
     });
+    console.log(id);
   }
 }

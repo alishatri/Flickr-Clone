@@ -10,22 +10,33 @@ import { ApiService } from 'src/app/service/api.service';
   styleUrls: ['./image-details.component.scss'],
 })
 export class ImageDetailsComponent implements OnInit {
+  imageDetails: any;
+  id: any;
+
   constructor(
     private activateRoute: ActivatedRoute,
     private apiService: ApiService
   ) {}
 
-  imageDetails: any;
-
   ngOnInit(): void {
-    this.activateRoute.params.subscribe((params: any) => {
-      this.apiService.imageDetails(params.id).subscribe((data) => {
-        this.imageDetails = data;
-
-        
-        console.log('Image details',this.imageDetails);
-        
-      });
+    this.activateRoute.params.subscribe((params) => {
+      this.id = params['id'];
+      this.apiService.imageDetails(this.id).subscribe(
+        (data: any) => {
+          this.imageDetails = ((flickerPhoto: FlickrPhoto) => {
+            const photos = {
+              id: this.id,
+              url: `https://farm${flickerPhoto.farm}.staticflickr.com/${flickerPhoto.server}/${this.id}_${flickerPhoto.secret}`,
+            };
+            console.log(photos);
+            return photos;
+          })(data);
+          console.log(data);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
     });
   }
 }
